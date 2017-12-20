@@ -1,0 +1,14 @@
+{
+  "name": "generator-readme-structure",
+  "version": "0.1.0",
+  "description": "A Yeoman generator to create readme file based on pre-defined structure.",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator, readme-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
