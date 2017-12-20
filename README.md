@@ -15,3 +15,7 @@ yo readme-structure
 ## License
 
 Licensed under the [MIT license](http://sana-moussa.mit-license.org).
+
+## Acknowledgments
+* structure inspired from: 
+**Billie Thompson** - *readme template* - [PurpleBooth](https://github.com/PurpleBooth)
