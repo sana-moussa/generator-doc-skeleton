@@ -1,6 +1,6 @@
 {
   "name": "generator-doc-skeleton",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Yeoman generator to create readme and wiki files based on pre-defined structure.",
   "files": [
     "generators"
