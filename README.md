@@ -1,4 +1,4 @@
-# generator-readme-structure
+# generator-doc-skeleton
 > A Yeoman generator to create readme and wiki files based on pre-defined structure.
  
 **readme**: will contain all the generic stuff  <br />
@@ -18,11 +18,11 @@ npm install -g yo
 
 1- install the generator globally
 ```bash
-npm install -g generator-readme-structure
+npm install -g generator-doc-skeleton
 ```
 2- run the generator from your project root folder
 ```bash
-yo readme-structure
+yo doc-skeleton
 ```
 ## Verification
 you can run this command to detect potential issues with the system that could prevent Yeoman from working correctly

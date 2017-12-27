@@ -17,7 +17,7 @@ module.exports = class extends Generator {
 
     prompting() {
         if (!this.options['skip-welcome-message']) {
-            this.log(yosay('Let\'s create awesome structured readme and wiki for your project!'));
+            this.log(yosay(`Let\'s create awesome structured  ${chalk.blue('readme')} &  ${chalk.blue('wiki')} for your project!`));
         }
 
         const prompts = [{
