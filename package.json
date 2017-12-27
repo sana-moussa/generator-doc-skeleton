@@ -17,5 +17,10 @@
     "type": "git",
     "url": "https://github.com/sana-moussa/generator-doc-skeleton"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "author": {
+    "name": "Sana Moussa",
+    "email": "sm@delodi.net",
+    "url": "http://delodi.net/sm"
+  }
 }
