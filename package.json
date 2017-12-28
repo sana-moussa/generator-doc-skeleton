@@ -1,12 +1,13 @@
 {
   "name": "generator-doc-skeleton",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Yeoman generator to create readme and wiki files based on pre-defined structure.",
+  "homepage": "https://github.com/sana-moussa/generator-doc-skeleton",
   "files": [
     "generators"
   ],
   "keywords": [
-    "yeoman-generator, documentation-skeleton, readme-skeleton, wiki-skeleton, readme-generator, project-skeleton"
+    "yeoman-generator, documentation, readme, wiki, skeleton, project-setup"
   ],
   "dependencies": {
     "yeoman-generator": "^1.1.1",
@@ -19,7 +20,7 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Sana Moussa",
+    "name": "sana-moussa",
     "email": "sm@delodi.net",
     "url": "http://delodi.net/sm"
   }
