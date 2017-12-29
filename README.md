@@ -30,6 +30,12 @@ you can run this command to detect potential issues with the system that could p
 ```bash 
 yo doctor
 ```
+## Troubleshooting
+if you have a complain about the generator not being installed then please update yo globally:
+```bash 
+npm update -g yo
+```
+ 
 ## Author
 
 © 2017 Sana Moussa <http://delodi.net/sm>
