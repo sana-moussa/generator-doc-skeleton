@@ -37,26 +37,6 @@ module.exports = class extends Generator {
             name: 'requirements',
             message: `Would you like to add a ${chalk.blue('requirements')} section ?`
         },
-        //     {
-        //     type: 'checkbox',
-        //     name: 'requirementsList',
-        //     message: 'What are the requirements for this project',
-        //     when: answers => answers.requirements,
-        //     choices: [{
-        //         name: 'node',
-        //         value: 'includeNode',
-        //     }, {
-        //         name: 'npm',
-        //         value: 'includeNpm',
-        //     }, {
-        //         name: 'react',
-        //         value: 'includeReact',
-        //     }, {
-        //         name: 'meteor',
-        //         value: 'includeMeteor',
-        //     }],
-        //
-        // },
             {
             type: 'confirm',
             name: 'installation',
@@ -76,6 +56,24 @@ module.exports = class extends Generator {
             message: `Does this project contain a ${chalk.blue('mobile app')} ?`,
             when: answers => answers.internal,
         }, {
+                type: 'checkbox',
+                name: 'devTools',
+                message: 'What tools will you be using in this project?',
+                when: answers => answers.internal,
+                choices: [{
+                    name: 'react native',
+                    value: 'reactNative',
+                }, {
+                    name: 'meteor',
+                    value: 'meteor',
+                }, {
+                    name: 'redux',
+                    value: 'redux',
+                }
+                ],
+
+        },
+            {
             type: 'confirm',
             name: 'utils',
             message: `Would you like to add  a ${chalk.blue('utils')} section ?`
@@ -111,11 +109,12 @@ module.exports = class extends Generator {
             this.acknowledgments    = answers.acknowledgments;
             this.dependencies       = answers.dependencies;
 
-            // const requirementsList = answers.requirementsList;
-            // const hasRequirement = requirement => requirementsList && requirementsList.indexOf(requirement) !== -1;
-            //
-            // this.includeReact = hasRequirement('includeReact');
-            // this.log(this.includeReact);
+            const devTools = answers.devTools;
+            const hasDevTool = devTool => devTools && devTools.indexOf(devTool) !== -1;
+
+            this.reactNative = hasDevTool('reactNative');
+            this.meteor = hasDevTool('meteor');
+            // this.log(this.reactNative);
         });
     }
 
@@ -151,6 +150,8 @@ module.exports = class extends Generator {
                 internal:           this.internal,
                 translations:       this.translations,
                 mobile:             this.mobile,
+                reactNative:        this.reactNative,
+                meteor:             this.meteor
             }
         );
     }

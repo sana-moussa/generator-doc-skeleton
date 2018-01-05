@@ -38,7 +38,7 @@ npm update -g yo
  
 ## Author
 
-© 2017 Sana Moussa <http://delodi.net/sm>
+© 2017 Sana Moussa <https://delodi.net/en/team/sana-moussa>
 
 ## License
 
