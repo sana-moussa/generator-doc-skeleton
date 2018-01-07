@@ -36,11 +36,26 @@ module.exports = class extends Generator {
             type: 'confirm',
             name: 'requirements',
             message: `Would you like to add a ${chalk.blue('requirements')} section ?`
-        },
-            {
+        }, {
             type: 'confirm',
             name: 'installation',
             message: `Would you like to add an ${chalk.blue('installation')} section ?`,
+        },{
+            type: 'list',
+            name: 'setup',
+            message: `What ${chalk.blue('virtual software development environment')} you will use ?`,
+            when: answers => answers.installation,
+            choices: [{
+                name: 'Docker',
+                value: 'docker',
+            }, {
+                name: 'Vagrant',
+                value: 'vagrant',
+            }, {
+                name: 'other',
+                value: 'other',
+            }
+            ],
         }, {
             type: 'confirm',
             name: 'internal',
@@ -56,22 +71,24 @@ module.exports = class extends Generator {
             message: `Does this project contain a ${chalk.blue('mobile app')} ?`,
             when: answers => answers.internal,
         }, {
-                type: 'checkbox',
-                name: 'devTools',
-                message: 'What tools will you be using in this project?',
-                when: answers => answers.internal,
-                choices: [{
-                    name: 'react native',
-                    value: 'reactNative',
-                }, {
-                    name: 'meteor',
-                    value: 'meteor',
-                }, {
-                    name: 'redux',
-                    value: 'redux',
-                }
-                ],
-
+            type: 'checkbox',
+            name: 'devTools',
+            message: 'What frameworks will you be using in this project?',
+            when: answers => answers.internal,
+            choices: [{
+                name: 'React Native',
+                value: 'reactNative',
+            }, {
+                name: 'Meteor',
+                value: 'meteor',
+            }, {
+                name: 'Symfony',
+                value: 'symfony',
+            }, {
+                name: 'other',
+                value: 'other',
+            }
+            ],
         },
             {
             type: 'confirm',
@@ -109,12 +126,18 @@ module.exports = class extends Generator {
             this.acknowledgments    = answers.acknowledgments;
             this.dependencies       = answers.dependencies;
 
-            const devTools = answers.devTools;
+            const devTools   = answers.devTools;
             const hasDevTool = devTool => devTools && devTools.indexOf(devTool) !== -1;
 
             this.reactNative = hasDevTool('reactNative');
-            this.meteor = hasDevTool('meteor');
-            // this.log(this.reactNative);
+            this.meteor      = hasDevTool('meteor');
+            this.symfony     = hasDevTool('symfony');
+
+            const devSetup    = answers.setup;
+            const hasDevSetup = devEnv => devSetup && devSetup.indexOf(devEnv) !== -1;
+
+            this.docker       = hasDevSetup('docker');
+            this.vagrant      = hasDevSetup('vagrant');
         });
     }
 
@@ -137,6 +160,8 @@ module.exports = class extends Generator {
                 tests:              this.tests,
                 deployment:         this.deployment,
                 acknowledgments:    this.acknowledgments,
+                docker:             this.docker,
+                vagrant:            this.vagrant,
             }
         );
     }
@@ -151,7 +176,8 @@ module.exports = class extends Generator {
                 translations:       this.translations,
                 mobile:             this.mobile,
                 reactNative:        this.reactNative,
-                meteor:             this.meteor
+                meteor:             this.meteor,
+                symfony:            this.symfony
             }
         );
     }

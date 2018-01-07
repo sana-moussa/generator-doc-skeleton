@@ -18,6 +18,7 @@ This is a private wiki used as a reference for developers.
 
 ### Important Commands to run
 <!--Important Commands to run with a short description of the context-->
+
 <% if (reactNative) { -%>
 
 _For React Native_
@@ -33,14 +34,26 @@ npm install babel-plugin-transform-class-properties --savenpm run start
 <% } -%>
 
 <% if (meteor) { -%>
+
 _For Meteor_
-- Run the development server ny running: ```meteor```
+- Run the development server by running: ```meteor```
 
 <% } -%>
 
+<% if (symfony) { -%>
+
+_For Symfony_
+- Start by downloading the  [composer](https://getcomposer.org) 
+
+<% } -%>
 
 ### Contacts
 <!--How to contact the responsible person for this project -->
+Please refer to :
+* 
+*
+ 
+
 <% } -%>
 
 <% if (translations) { -%>
@@ -75,10 +88,6 @@ _for android_:
   - Run `adb devices` to make sure your device shows up
   - Run `adb reverse tcp:8081 tcp:8081`
 
-
-
 <% } -%>
-
-
 
 <% } -%>
